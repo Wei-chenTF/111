@@ -1,0 +1,57 @@
+/* pages/add/add.wxss */
+.user{
+  width: 128rpx;
+  height: 128rpx;
+  margin:20rpx auto;
+}
+
+page{
+  background-color: #fff;
+}
+
+
+.input{
+  width: 100%;
+  padding: 0 20rpx;
+}
+
+.form{
+  padding: 0 40rpx;
+}
+
+.flex{
+  border-bottom: 1px solid #767676;
+}
+
+.flex text{
+  flex-shrink: 0;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.pick-date {
+  background-color: none;
+  width: 100%;
+  margin: 20rpx auto;
+  text-align: center;
+  color:#838383;
+  padding: 0 20rpx;
+}
+.pick-time {
+  background-color: none;
+  width: 100%;
+  margin: 20rpx auto;
+  text-align: center;
+  color:#838383;
+  padding: 0 20rpx;
+}
+
+
+.submit{
+  margin: 40rpx auto; 
+}
+
+button[plain]{
+  border-color: #000; 
+  color: #000;
+}

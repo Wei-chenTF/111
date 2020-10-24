@@ -1,0 +1,15 @@
+/**index.wxss**/
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.add-btn{
+  margin:300rpx auto;
+  border-color: #ff4d74; 
+  color: #ff4d74;
+}
+

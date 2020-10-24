@@ -1,0 +1,1 @@
+<button class="add-btn"  plain="true" bindtap="addAlert">添加提醒</button>
