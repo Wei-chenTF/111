@@ -1,2 +1,29 @@
 <!--pages/me/me.wxml-->
-<text>pages/me/me.wxml</text>
+
+<!-- <view class="table">
+ <view class="tr bg-w">
+ <view class="th">事件</view>
+ <view class="th">日期</view>
+ <view class="th ">时间</view>
+ </view>
+ <block wx:for="{{listData}}" wx:key="{[code]}">
+ <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+ <view class="td">{{item.code}}</view>
+ <view class="td">{{item.text}}</view>
+ <view class="td">{{item.type}}</view>
+ </view>
+ <view class="tr" wx:else>
+ <view class="td">{{item.code}}</view>
+ <view class="td">{{item.text}}</view>
+ <view class="td">{{item.type}}</view>
+ </view>
+ </block>
+</view> -->
+<view class='a' wx:for="{{ne}}"><!--wx:for是微信数据绑定的一种方式，该数组有多少数据就显示多少个view-->
+    <!--index为每个数据对应的下标-->
+    <view >序号：{{index+1}}</view>
+    <!--item就相当于数组名+下标的结合体，适用于调用数组所有数据-->
+    <view>{{item.name}}</view>
+    <view >{{item.date}}</view>
+    <view >{{item.time}}</view>
+</view>

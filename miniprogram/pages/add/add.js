@@ -26,6 +26,10 @@ Page({
     let {name} = e.detail.value
     let date = this.data.date
     let time = this.data.time
+
+    //date = new Date(date).getTime()
+    //time = new Date(time).getTime()
+
     let checked = this.check(name,date,time)
     if (checked) {
       db.collection('birthday').add({
@@ -41,23 +45,24 @@ Page({
           })
           setTimeout(()=>{
              wx.navigateTo({
-              url: `/pages/me/me`,
-                // url: `/pages/me/me?name=${name}&date=${date}&time=${time}`,
+              
+            
+              url: `/pages/add/subscribeMessage?date=${date}&name=${name}&time=${time}`,
              })
           },1600)
         }
 
       })
     }
-
-
   },
+
   //将选择的日期和时间显示
    selectDate(e){
     this.setData({
       date:e.detail.value
     })
    },
+
    selectTime(e){
     this.setData({
       time:e.detail.value

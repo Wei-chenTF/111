@@ -13,6 +13,16 @@ Page({
     })
   },
 
+  alert() {
+    wx.cloud.callFunction({
+      name:"sendSubscribeMessage"
+    }).then(res =>{
+      console.log(res)
+    }).catch(err=>{
+      console.error(err)
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

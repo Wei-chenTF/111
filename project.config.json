@@ -37,6 +37,7 @@
   "libVersion": "2.8.1",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "search": {
       "current": -1,
@@ -74,9 +75,10 @@
           "scene": null
         },
         {
-          "id": -1,
-          "name": "订阅消息",
-          "pathName": "pages/me/me",
+          "id": 2,
+          "name": "订阅",
+          "pathName": "pages/add/subscribeMessage",
+          "query": "",
           "scene": null
         }
       ]
