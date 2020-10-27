@@ -1,2 +1,4 @@
 <button class="add-btn"  plain="true" bindtap="addAlert">添加提醒</button>
-<button class="add-btn"  plain="true" bindtap="alert">提醒</button>
+<!-- <button class="add-btn"  plain="true" bindtap="alert">提醒</button>
+
+<button class="add-btn"  plain="true" bindtap="getData">获取数据</button> -->

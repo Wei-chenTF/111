@@ -5,7 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-
   },
   addAlert() {
     wx.navigateTo({
@@ -15,13 +14,63 @@ Page({
 
   alert() {
     wx.cloud.callFunction({
-      name:"sendSubscribeMessage"
+      name:'sendSubscribeMessage'
     }).then(res =>{
       console.log(res)
     }).catch(err=>{
       console.error(err)
     })
   },
+
+
+// liq start
+getData(){
+    wx.cloud.database().collection('subscribeMessage').get({
+      //如果查询成功的话    
+      success: res => {
+        // console.log(res.data)
+
+        //获取系统时间
+        var date=new Date()
+        var year=date.getFullYear()
+        var month=date.getMonth()+1
+        var day=date.getDate()
+        var time=date.getHours()+":"+date.getMinutes()
+        var taskDate=''+year+'-'+month+'-'+day
+        console.log("今天是"+taskDate+" "+time)
+
+        //遍历数据库中的每条数据，并获取data
+        res.data.forEach(i => {
+          // console.log(i)
+          if (i.date===taskDate&&i.time===time) {
+            console.log(i)
+            调用推送函数
+            wx.cloud.callFunction({
+              name:'sendSubscribeMessage'
+            }).then(res =>{
+              console.log(res)
+            }).catch(err=>{
+              console.error(err)
+            })
+
+
+          }
+        });
+
+        
+
+
+        //这一步很重要，给ne赋值，没有这一步的话，前台就不会显示值      
+        this.setData({
+          ne: res.data
+        })
+      }
+    })
+},
+
+//liq end
+
+
 
   /**
    * 生命周期函数--监听页面加载

@@ -10,18 +10,6 @@ Page({
   data: {
   
       ne:[],  //这是一个空的数组，等下获取到云数据库的数据将存放在其中
-
-
-
-    // listData:[
-    //   {"code":"name","text":"s","type":"飒飒"},
-    //   {"code":"02","text":"text2","type":"type2"},
-    //   {"code":"03","text":"text3","type":"type3"},
-    //   {"code":"04","text":"text4","type":"type4"},
-    //   {"code":"05","text":"text5","type":"type5"},
-    //   {"code":"06","text":"text6","type":"type6"},
-    //   {"code":"07","text":"text7","type":"type7"}
-    //   ]
  
   },
  
@@ -48,14 +36,7 @@ Page({
  
 
   
-  /**
-   * 查询集合counters中的数据
-   */
- 
-  /**
-   * 生命周期函数--监听页面加载
-   */
- 
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

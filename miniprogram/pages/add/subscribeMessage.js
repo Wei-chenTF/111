@@ -37,7 +37,6 @@ Page({
          wx.reLaunch({
            url: '/pages/me/me',
          })
-       
       }
     })
   },
