@@ -10,6 +10,7 @@ const db = cloud.database()
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   const _openid = wxContext.OPENID
+  // const _openid=getApp().globalData.openid
   const date = new Date(event.date)
   const time = new Date(event.time)
 

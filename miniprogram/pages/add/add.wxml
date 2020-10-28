@@ -16,7 +16,7 @@
       </picker>
     </view>
     
-		<button class="submit" plain="true" form-type="submit">确认添加</button>
+		<button class="submit" plain="true" form-type="submit">建立日程</button>
   </view>
   
 </form>
