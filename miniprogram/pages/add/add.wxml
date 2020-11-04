@@ -1,9 +1,15 @@
 <!--pages/add/add.wxml-->
 <form bindsubmit="addAlert">
 	<view class="form">
-    <view class="flex align-center"><text>日程</text>
+    <!-- <view class="flex align-center"><text>日程</text>
       <input placeholder="请输入提醒内容" name="name" class="input"></input></view>
-    
+     -->
+      <view class="flex align-center"><text >日程</text>
+			<picker mode="selector" bindchange="selectThing" value="{{index}}" range="{{array}}">
+				<view class="pick-date">{{array[index]||'点击设置'}}</view>
+      </picker>
+    </view>
+
 		<view class="flex align-center"><text >提醒日期</text>
 			<picker mode="date" bindchange="selectDate" value="{{date}}">
 				<view class="pick-date">{{date||'点击设置'}}</view>

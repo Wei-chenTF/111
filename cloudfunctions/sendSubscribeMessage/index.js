@@ -17,6 +17,7 @@ exports.main = async (event, context) => {
   var year=date.getFullYear()
   var month=date.getMonth()+1
   var day=date.getDate()
+  day=day < 10 ? ('0' + day) : day
   var h = date.getHours()
   h=h < 10 ? ('0' + h) : h
   var minute = date.getMinutes()

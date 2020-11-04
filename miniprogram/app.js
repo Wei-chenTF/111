@@ -1,7 +1,8 @@
 //app.js
 App({
     globalData:{
-      openid:null
+      openid:null,
+      mingan:null
     },
     onLaunch: function () {
       var that=this
