@@ -33,3 +33,20 @@
   
 
  }
+ .add-btn{
+  /* height: 28px;
+  font-size:10px;
+  text-align:center; */
+  position: relative;
+}
+.xh{
+  font-size: 25rpx;
+}
+.center{
+  display: flex;
+  justify-content: center;
+
+}
+.sj{
+  font-size: 30rpx;
+}

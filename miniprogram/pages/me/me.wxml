@@ -1,11 +1,20 @@
 <!--pages/me/me.wxml-->
-
-<view class='a' wx:for="{{ne}}"><!--wx:for是微信数据绑定的一种方式，该数组有多少数据就显示多少个view-->
-    <!--index为每个数据对应的下标-->
-    <view class='bigtable'>
-    <view >序号：{{index+1}} </view>
-    <!--item就相当于数组名+下标的结合体，适用于调用数组所有数据-->
-    <view>{{item.name}}</view>
-    <view >{{item.date}}  {{item.time}}</view>
-    </view> 
-</view>
+<form bindsubmit="del"  >
+    <view class='a' wx:for="{{ne}}">
+        <!--wx:for是微信数据绑定的一种方式，该数组有多少数据就显示多少个view-->
+        <!--index为每个数据对应的下标-->
+        <view class='bigtable'>
+            <view><text class="xh" >序号:{{index+1}} </text></view>
+            <!--item就相当于数组名+下标的结合体，适用于调用数组所有数据-->
+            <view class="center">
+                <text>{{item.name}}</text>
+            </view>
+            <view bin>
+                <text class="sj" > {{item.date}} {{item.time}} </text>
+                <button class="add-btn" plain="true" size="mini" form-type="submit"  >
+                    删除
+                </button>
+            </view>
+        </view>
+    </view>
+</form>

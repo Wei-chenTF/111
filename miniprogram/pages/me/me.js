@@ -2,15 +2,11 @@
 const db = wx.cloud.database()
 const cont=db.collection('subscribeMessage')
 Page({
-  
   /**
    * 页面的初始数据
    */
-
   data: {
-  
       ne:[],  //这是一个空的数组，等下获取到云数据库的数据将存放在其中
- 
   },
  
   onLoad: function (options) {
@@ -32,8 +28,14 @@ Page({
       }
     })
   },    
+  del(e){
+    
+    console.log(e.detail.value)
+    
+    let name=this.data.ne[0].name
+    // console.log(name)
+  },
 
- 
 
   
 
