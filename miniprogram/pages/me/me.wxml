@@ -5,7 +5,7 @@
         <!--index为每个数据对应的下标-->
         <view class='bigtable'>
             <view><text class="xh" >序号:{{index+1}} </text></view>
-            <!--item就相当于数组名+下标的结合体，适用于调用数组所有数据-->
+            <!--item就相 当于数组名+下标的结合体，适用于调用数组所有数据-->
             <view class="center">
                 <text>{{item.name}}</text>
             </view>
