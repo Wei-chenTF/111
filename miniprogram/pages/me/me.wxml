@@ -1,7 +1,7 @@
 <!--pages/me/me.wxml-->
 <form bindsubmit="del"  >
     <view class='a' wx:for="{{ne}}">
-        <!--wx:for是微信数据绑定的一种方式，该数组有多少数据就显示多少个view-->
+        <!--wx:for是微信数据绑定 的一种方式，该数组有多少数据就显示多少个view-->
         <!--index为每个数据对应的下标-->
         <view class='bigtable'>
             <view><text class="xh" >序号:{{index+1}} </text></view>
