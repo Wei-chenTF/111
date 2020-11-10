@@ -1,6 +1,6 @@
 // pages/me/me.js
-const db = wx.cloud.database()
-const cont=db.collection('subscribeMessage')
+// const db = wx.cloud.database()
+// const cont=db.collection('subscribeMessage')
 Page({
   /**
    * 页面的初始数据
@@ -10,7 +10,7 @@ Page({
   },
  
   onLoad: function (options) {
-    var _this = this;
+    var _this=this;
     //1、引用数据库   
     const db = wx.cloud.database({
       //这个是环境ID不是环境名称     
@@ -18,9 +18,12 @@ Page({
     })
     //2、开始查询数据了  news对应的是集合的名称   
     db.collection('subscribeMessage').get({
-      //如果查询成功的话    
+      //如果查询成功的话   
+       
       success: res => {
+        
         console.log(res.data)
+
         //这一步很重要，给ne赋值，没有这一步的话，前台就不会显示值      
         this.setData({
           ne: res.data
@@ -28,12 +31,25 @@ Page({
       }
     })
   },    
+
+
   del(e){
     
-    console.log(e.detail.value)
+    // console.log(e.detail.value)
+    var id=e.currentTarget.dataset.index;
+    console.log(id)
+    const db = wx.cloud.database({
+      //这个是环境ID不是环境名称     
+      env: 'data-3g27hwj2149b13bc'
+    })
+    db.collection('subscribeMessage').doc(id).remove({
+      success(res) {
+          console.log(res.data)
+      }
+  })
+  this.onLoad()
+ 
     
-    let name=this.data.ne[0].name
-    // console.log(name)
   },
 
 
@@ -83,7 +99,7 @@ Page({
   },
 
   /**
-   * 用户点击右上 角分享
+   * 用户点击右上角分享
    */
   onShareAppMessage: function () {
 

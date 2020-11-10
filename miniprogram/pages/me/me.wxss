@@ -35,9 +35,10 @@
  }
  .add-btn{
   /* height: 28px;
-  font-size: 10px;
-  text-align: center; */
+  font-size:10px;
+  text-align:center; */
   position: relative;
+
 }
 .xh{
   font-size: 25rpx;
@@ -49,4 +50,8 @@
 }
 .sj{
   font-size: 30rpx;
+}
+.a{
+  border: 2px solid black;
+  background: rgb(232, 235, 238);
 }
