@@ -24,52 +24,61 @@ exports.main = async (event, context) => {
   minute = minute < 10 ? ('0' + minute) : minute
   var time=h+":"+minute
   var taskDate=''+year+'-'+month+'-'+day
-  //console.log("今天是"+taskDate+" "+time)
-  
-  // const wxContext = cloud.getWXContext()  
-  // // const _openid = wxContext.OPENID 
-
   const wxContext = cloud.getWXContext()
-  // const _openid = wxContext.OPENID
   const _openid=event.openid
-
-
-
-// const _openid=app.globalData.openid||'oohGZ5DxurJBq1wiJq8Pk6STt1Ms'
+  //if(switch==1)不用判断日期
+  
   const dbResult = await db.collection('subscribeMessage').where({
     _openid:_openid,
     date:taskDate,
     time:time
-    // _openid
   }).get()
-
-  
   const {data} =dbResult
   console.log(dbResult)
+  console.log(data.length)
+  for(var i in data ){
   try {
-    var dtime=data[0].date+" "+data[0].time
-      const result = await cloud.openapi.subscribeMessage.send(
+    var dtime=data[i].date+" "+data[i].time
+    console.log(dtime)
+      var result = await cloud.openapi.subscribeMessage.send(
         {
-          "touser":data[0]._openid,
+          "touser":data[i]._openid,
           "template_id": 'JfUaLD9OPbWBJiyCJuehYc5SUQfuK7yWqLYE0idCr4w',
           "page": '/pages/add/add',
           "data": {
           "thing5": {
-            "value":data[0].name
+            "value":data[i].name
           },
           "date4": {
             "value":dtime
           }
-          
         },
-        "miniprogramState": 'developer'
       }   
       )
-    
     console.log(result)
-    return {result, _openid}
+    //return {result, _openid}
+    // if(data[i].switch==1){
+    //   var date1=data[i].date
+    //   date1.split("-")
+    //   date1[2]=int
+    //   var newdate=data[i].date
+
+    //   db.collection('birthday').add({
+    //     data: {
+    //       name:data[i].name,
+    //       date:newdate,
+    //       time:data[i].time,
+    //       swtich:1
+    //     }
+    //   })
+    // .then(res=>{
+    //     console.log(res)
+    // })
+
+    // }
   } catch (err) {
     console.log(err)
-    return {err,data}
+    //return {err,data}
   }
+}
 }

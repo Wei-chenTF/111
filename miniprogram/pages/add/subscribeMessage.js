@@ -3,14 +3,14 @@ const dbutil = require('../../utils/db.js')
 Page({
 
   /**
-   *  页面的初始数据
+   * 页面的初始数据
    */
   data: {
 
   },
 
   /**
-   *  生命周期函数--监听页面加载
+   * 生命周期函数--监听页面加载
    */
   onLoad: function(e) {
     this.setData(e)
@@ -22,6 +22,7 @@ Page({
       "date": this.data.date,
       "name": this.data.name,
       "time": this.data.time,
+      "switch": this.data.switch,
       "sended": 0
     }
     wx.requestSubscribeMessage({

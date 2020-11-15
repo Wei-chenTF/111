@@ -1,6 +1,6 @@
-// pages/me/me.js
-// const db = wx.cloud.database()
-// const cont=db.collection('subscribeMessage')
+//pages/me/me.js
+const db = wx.cloud.database()
+const cont=db.collection('subscribeMessage')
 Page({
   /**
    * 页面的初始数据
@@ -78,7 +78,7 @@ Page({
   },
 
   /**
-   * 生命周期函数-- 监听页面卸载
+   * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
 

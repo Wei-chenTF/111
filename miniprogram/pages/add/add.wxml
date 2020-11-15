@@ -1,28 +1,46 @@
 <!--pages/add/add.wxml-->
 <form bindsubmit="addAlert">
-	<view class="form">
-    <!-- <view class="flex align-center"><text>日程</text>
-      <input placeholder="请输入提醒内容" name="name" class="input"></input></view>
-     -->
-      <view class="flex align-center"><text >日程</text>
-			<picker mode="selector" bindchange="selectThing" value="{{index}}" range="{{array}}">
-				<view class="pick-date">{{array[index]||'点击设置'}}</view>
+  <view class="form">
+
+    <view class="flex align-center"><text>日程</text>
+      <picker mode="selector" bindchange="selectThing" value="{{index}}" range="{{array}}">
+        <view class="pick-date">{{array[index]||'点击设置'}}</view>
       </picker>
     </view>
 
-		<view class="flex align-center"><text >提醒日期</text>
-			<picker mode="date" bindchange="selectDate" value="{{date}}">
-				<view class="pick-date">{{date||'点击设置'}}</view>
+    <view class="flex align-center"><text>提醒日期</text>
+      <picker mode="date" bindchange="selectDate" value="{{date}}">
+        <view class="pick-date">{{date||'点击设置'}}</view>
       </picker>
     </view>
 
-    <view class="flex align-center"><text>提醒时间</text>
-			<picker mode="time" bindchange="selectTime" value="{{time}}">
-				<view class="pick-time">{{time||'点击设置'}}</view>
+    <view class="flex align-center">
+
+      <view class="list-title">
+        <view class="left">提醒时间</view>
+
+        <view class="right">
+          循环提醒
+          <switch checked="{{switch1Checked}}" style='zoom:.6;' bindchange="switch1Change" />
+        </view>
+
+      </view>
+
+
+      <picker mode="time" bindchange="selectTime" value="{{time}}">
+        <view class="pick-time">{{time||'点击设置'}}</view>
       </picker>
     </view>
-    
-		<button class="submit" plain="true" form-type="submit">建立日程</button>
+    <!-- <view class="page__bd">
+        <view class="section section_gap">
+            <view class="section__title">循环提醒</view>
+            <view class="body-view">
+                <switch checked="{{switch1Checked}}" bindchange="switch1Change"/>
+            </view>
+        </view>
+    </view> -->
+
+    <button class="submit" plain="true" form-type="submit">建立日程</button>
   </view>
-  
+
 </form>

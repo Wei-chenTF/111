@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    switch1Checked:0,
+    swtich:0,
     array: ['打卡了', '吃饭', '上课', '开会','生日','抢购','其他'],
     objectArray: [
       {
@@ -39,33 +41,34 @@ Page({
     
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
+  switch1Change(e){ 
+    var that=this
+    console.log(e.detail.value)
+    if (e.detail.value){  
+      that.setData({ swtich: 1 })//当前页面变量
+    }else{ 
+      that.setData({ swtich: 0 })//当前页面变量
+       }
+       console.log(that.data.swtich)
+      },
   addAlert(e) {
+    // console.log(this.data.swtich)
     // let {name} = e.detail.value
     let date = this.data.date
     let time = this.data.time
     let index = this.data.index
     let name=this.data.array[index]
-    // console.log(name)
+    let swtich=this.data.swtich
+
+    console.log(swtich)
     let checked = this.check(name, date, time)
     if (checked) {
       db.collection('birthday').add({
         data: {
           name,
           date,
-          time
+          time,
+          swtich
         }
       }).then(res => {
         if (res._id) {
@@ -74,7 +77,7 @@ Page({
           })
           setTimeout(() => {
             wx.navigateTo({
-              url: `/pages/add/subscribeMessage?date=${date}&name=${name}&time=${time}`,
+              url: `/pages/add/subscribeMessage?date=${date}&name=${name}&time=${time}&switch=${swtich}`,
             })
           }, 1600)
         }

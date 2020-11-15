@@ -9,6 +9,12 @@ page{
   background-color: #fff;
 }
 
+.list-title {
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  
+  }
 
 .input{
   width: 100%;
