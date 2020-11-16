@@ -10,9 +10,9 @@
         <view class="center">
             <text>{{item.name}}</text>
         </view>
-        <view>
-            <text class="sj" decode="{{true}}"> {{item.date}} {{item.time}} &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; </text>
-            
+        <view style="fys" >
+            <text wx:if="{{item.switch==1}}" class="sj" decode="{{true}}"> {{item.date}} {{item.time}} &nbsp; (每日提醒)</text>
+            <text wx:else class="sj" decode="{{true}}"> {{item.date}} {{item.time}} &nbsp;&nbsp; </text>
                 <button class="add-btn" plain="true" size="mini" bindtap="del" data-index="{{item._id}}">
                     删除
                 </button>

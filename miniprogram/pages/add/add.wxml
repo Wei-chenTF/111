@@ -20,25 +20,16 @@
         <view class="left">提醒时间</view>
 
         <view class="right">
-          循环提醒
+          每日提醒
           <switch checked="{{switch1Checked}}" style='zoom:.6;' bindchange="switch1Change" />
         </view>
-
       </view>
-
-
+      <view class="he"> </view>
       <picker mode="time" bindchange="selectTime" value="{{time}}">
         <view class="pick-time">{{time||'点击设置'}}</view>
       </picker>
     </view>
-    <!-- <view class="page__bd">
-        <view class="section section_gap">
-            <view class="section__title">循环提醒</view>
-            <view class="body-view">
-                <switch checked="{{switch1Checked}}" bindchange="switch1Change"/>
-            </view>
-        </view>
-    </view> -->
+   
 
     <button class="submit" plain="true" form-type="submit">建立日程</button>
   </view>

@@ -30,16 +30,18 @@ exports.main = async (event, context) => {
   
   const dbResult = await db.collection('subscribeMessage').where({
     _openid:_openid,
-    date:taskDate,
+    // date:taskDate,
     time:time
   }).get()
   const {data} =dbResult
   console.log(dbResult)
   console.log(data.length)
-  for(var i in data ){
+  for(var i =0; i<data.length;i++ ){
+    if (data[i].switch==0 && data[i].date==taskDate){
+      console.log(data[i].switch)
   try {
     var dtime=data[i].date+" "+data[i].time
-    console.log(dtime)
+      console.log(dtime)
       var result = await cloud.openapi.subscribeMessage.send(
         {
           "touser":data[i]._openid,
@@ -56,29 +58,42 @@ exports.main = async (event, context) => {
       }   
       )
     console.log(result)
-    //return {result, _openid}
-    // if(data[i].switch==1){
-    //   var date1=data[i].date
-    //   date1.split("-")
-    //   date1[2]=int
-    //   var newdate=data[i].date
-
-    //   db.collection('birthday').add({
-    //     data: {
-    //       name:data[i].name,
-    //       date:newdate,
-    //       time:data[i].time,
-    //       swtich:1
-    //     }
-    //   })
-    // .then(res=>{
-    //     console.log(res)
-    // })
-
-    // }
+    
   } catch (err) {
     console.log(err)
     //return {err,data}
   }
+}
+     else if(data[i].switch==1){    
+      console.log(data[i].switch)
+  try {
+    var dtime1=data[i].time
+    console.log(dtime1)
+      var result = await cloud.openapi.subscribeMessage.send(
+        {
+          "touser":data[i]._openid,
+          "template_id": 'JfUaLD9OPbWBJiyCJuehYc5SUQfuK7yWqLYE0idCr4w',
+          "page": '/pages/add/add',
+          "data": {
+          "thing5": {
+            "value":data[i].name
+          },
+          "date4": {
+            "value":dtime1
+          }
+        },
+      }   
+      )
+    console.log(result)
+   
+  } catch (err) {
+    console.log(err)
+    //return {err,data}
+  }
+
+    }
+    else{
+      console.log("3")
+    }
 }
 }
